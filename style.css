@@ -29,7 +29,7 @@ body {
 .thank-you-card {
   width: 400px;
   height: 400px;
-  background-color: var(--blue-dark);
+  background: linear-gradient(var(--blue-dark), var(--gray-medium-transparent));
   border-radius: 30px;
 }
 
