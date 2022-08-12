@@ -11,8 +11,10 @@
   --white: hsl(0, 0%, 100%);
   --gray-light: hsl(217, 12%, 63%);
   --gray-medium: hsl(216, 12%, 54%);
+  --gray-medium-transparent: hsla(216, 12%, 54%, 0.1);
   --blue-dark: hsl(213, 19%, 18%);
   --blue-very-dark: hsl(216, 12%, 8%);
+  --blue-very-dark-transparent: hsla(216, 12%, 8%, 0.15);
 }
 
 body {
@@ -23,7 +25,8 @@ body {
   justify-content: center;
 }
 
-.container {
+.container,
+.thank-you-card {
   width: 400px;
   height: 400px;
   background-color: var(--blue-dark);
@@ -38,25 +41,30 @@ body {
 .star-icon {
   width: 16px;
   padding: 15px;
-  background-color: black;
+  background-color: var(--gray-medium-transparent);
   border-radius: 50%;
 }
 
-h1 {
+h1,
+.thank-you-header {
   color: white;
-  font-weight: 400;
+  font-weight: 700;
+  font-size: 1.6rem;
 }
 
-p {
-  color: var(--gray-medium);
+p,
+.thank-you-paragraph {
+  color: var(--gray-light);
   font-size: 15px;
   margin-top: 10px !important;
+  line-height: 1.6rem;
 }
 
 .ratings-row {
   display: flex;
   justify-content: space-between;
   width: 80%;
+  margin-top: 20px;
 }
 
 .ratings-row > .rating {
@@ -64,9 +72,11 @@ p {
   width: 50px;
   height: 50px;
   border: none;
-  color: var(--gray-light);
-  background-color: var(--gray-medium);
+  color: var(--gray-medium);
+  font-weight: bold;
+  background-color: var(--gray-medium-transparent);
   font-size: 1rem;
+  transition: color 0.2s, background-color 0.2s;
 }
 
 .ratings-row > .rating:hover {
@@ -78,12 +88,12 @@ p {
 .submit {
   color: var(--white);
   width: 80%;
-  height: 40px;
+  height: 45px;
   border-radius: 25px;
   border: none;
   background-color: var(--orange);
   font-size: 1rem;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .submit:hover {
@@ -94,5 +104,37 @@ p {
 
 .selected-button {
   color: var(--white) !important;
-  background-color: var(--gray-light) !important;
+  background-color: var(--gray-medium) !important;
+}
+
+.thank-you-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+
+.thank-you-card > * {
+  margin-top: 40px;
+}
+
+.thank-you-image {
+  width: 150px;
+}
+
+.thank-you-paragraph {
+  width: 80%;
+  text-align: center;
+}
+
+.thank-you-message {
+  font-size: 1.2rem;
+  color: var(--orange);
+  background-color: var(--gray-medium-transparent);
+  padding: 10px 15px 10px 15px;
+  border-radius: 25px;
+}
+
+.thank-you-header {
+  margin-top: 20px;
 }
